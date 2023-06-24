@@ -15,15 +15,6 @@
   networking.hostName = "serval";
   networking.networkmanager.enable = true;
 
-  services.xserver = {
-    enable = true;
-    displayManager.lightdm.enable = true;
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-    };
-  };
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;
