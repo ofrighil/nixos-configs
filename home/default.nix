@@ -1,3 +1,3 @@
 {
-  imports = [ ./interface ./terminal ];
+  imports = [ ./editor ./interface ./terminal ];
 }

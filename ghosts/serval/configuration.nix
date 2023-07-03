@@ -38,6 +38,10 @@
     neovim
     git
     ripgrep
+    xclip # refactor later
+    rust-analyzer
+    cargo
+    rustc
   ];
 
   services.xserver = {
