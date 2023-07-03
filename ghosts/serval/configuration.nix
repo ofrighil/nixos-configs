@@ -31,17 +31,27 @@
   users.defaultUserShell = pkgs.zsh;
   environment.shells = [ pkgs.zsh ];
 
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     firefox
-    neovim
     git
     ripgrep
+    fd
     xclip # refactor later
     rust-analyzer
+    lua-language-server
     cargo
     rustc
+    # gcc
+    clang
   ];
 
   services.xserver = {
