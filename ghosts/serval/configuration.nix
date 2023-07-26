@@ -15,6 +15,10 @@
   networking.hostName = "serval";
   networking.networkmanager.enable = true;
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;

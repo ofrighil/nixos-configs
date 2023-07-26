@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home.packages = [ pkgs.neovim ];
+  home.packages = [ pkgs.neovim ]; #pkgs.gcc ];
 
   programs.neovim.plugins = [ pkgs.vimPlugins.nvim-treesitter.withAllGrammars ];
 

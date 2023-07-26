@@ -22,7 +22,7 @@ require('lazy').setup({
     branch = 'v2.x',
     dependencies = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'}, 
+      {'neovim/nvim-lspconfig'},
 
       -- Autocompletion
       {'hrsh7th/nvim-cmp'},
