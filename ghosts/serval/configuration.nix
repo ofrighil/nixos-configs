@@ -56,6 +56,8 @@
     rustc
     # gcc
     clang
+    python311
+    python311Packages.python-lsp-server
   ];
 
   services.xserver = {
