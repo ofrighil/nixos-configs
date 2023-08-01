@@ -2,10 +2,10 @@
   home.packages = [ pkgs.wezterm ];
 
   xdg.configFile."wezterm/wezterm.lua".text = ''
+    local wezterm = require('wezterm')
     return {
-      window_frame = {
-        font_size = 14.0,
-      }
+      font = wezterm.font("IosevkaTerm Nerd Font Mono", {weight="Regular", stretch="Normal", style="Normal"}),
+      font_size = 14.0,
     }
   '';
 }
