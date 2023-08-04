@@ -6,6 +6,7 @@
     nixosConfigurations.serval = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ 
+        ./base
         ./form
         ./ghosts/serval/configuration.nix
         home-manager.nixosModules.home-manager {
@@ -15,10 +16,6 @@
             imports = [ ./home ];
           };
         }
-	#({ pkgs, ... }: {
-	#  users.defaultUserShell = pkgs.zsh;
-	#  environment.shells = [ pkgs.zsh ];
-	#})
       ];
     };
   };
