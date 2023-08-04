@@ -1,6 +1,6 @@
 local lsp = require('lsp-zero').preset({})
 
-lsp.setup_servers({'pylsp', 'rust_analyzer'})
+lsp.setup_servers({'ocamllsp', 'pylsp', 'rust_analyzer'})
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 

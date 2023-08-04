@@ -47,6 +47,9 @@
     clang
     python311
     python311Packages.python-lsp-server
+    ocaml
+    ocamlPackages.ocaml-lsp
+    opam
   ];
 
   services.xserver = {

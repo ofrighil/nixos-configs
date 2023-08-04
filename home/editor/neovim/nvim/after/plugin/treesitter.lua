@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'lua', 'python', 'rust', 'vimdoc' },
+  ensure_installed = { 'lua', 'ocaml', 'python', 'rust', 'vimdoc' },
   auto_install = false,
   highlight = {
     enable = true,

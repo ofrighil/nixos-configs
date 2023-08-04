@@ -14,6 +14,8 @@ vim.o.smartindent = true
 
 vim.o.completeopt = 'menuone,noselect'
 vim.o.clipboard = 'unnamedplus'
+vim.o.scrolloff = 8
 vim.o.termguicolors = true
 vim.o.undofile = true
-
+vim.o.updatetime = 50
+vim.o.colorcolumn = "80"
