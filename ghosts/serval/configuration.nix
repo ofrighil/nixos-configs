@@ -7,7 +7,7 @@
 
   users.users.ofrighil = {
     isNormalUser = true;
-    uid = 6349;
+    uid = 1000;
     home = "/home/ofrighil";
     extraGroups = [ "wheel" "networkmanager" ];
   };
@@ -37,6 +37,7 @@
     firefox
     git
     ripgrep
+    bat
     fd
     xclip # refactor later
     rust-analyzer
