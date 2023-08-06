@@ -1,3 +1,4 @@
+require('nvim-treesitter.install').compilers = { 'clang++' }
 require('nvim-treesitter.configs').setup({
   ensure_installed = { 'lua', 'ocaml', 'python', 'rust', 'vimdoc' },
   auto_install = false,

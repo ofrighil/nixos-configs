@@ -42,12 +42,12 @@
     xclip # refactor later
     rust-analyzer
     lua-language-server
-    cargo
-    rustc
-    # gcc
+    lld_16
     clang
     python311
     python311Packages.python-lsp-server
+    gnumake
+    gcc
     ocaml
     ocamlPackages.ocaml-lsp
     opam
