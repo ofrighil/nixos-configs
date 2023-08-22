@@ -9,7 +9,7 @@
     isNormalUser = true;
     uid = 1000;
     home = "/home/ofrighil";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "docker" "wheel" "networkmanager" ];
   };
 
   networking.hostName = "serval";
@@ -33,12 +33,16 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  virtualisation.docker.enable = true;
+  # services.postgresql.enable = true;
+
   environment.systemPackages = with pkgs; [
     firefox
     git
     ripgrep
     bat
     fd
+    vim
     xclip # refactor later
     rust-analyzer
     lua-language-server
@@ -51,6 +55,7 @@
     ocaml
     ocamlPackages.ocaml-lsp
     opam
+    postgresql_15
   ];
 
   services.xserver = {
