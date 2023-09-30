@@ -5,12 +5,17 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
   users.users.ofrighil = {
     isNormalUser = true;
     uid = 1000;
     home = "/home/ofrighil";
     extraGroups = [ "docker" "wheel" "networkmanager" ];
+    shell = pkgs.nushell;
   };
+
+  environment.shells = with pkgs; [ nushell zsh ];
 
   networking.hostName = "serval";
   networking.networkmanager.enable = true;
@@ -48,14 +53,16 @@
     lua-language-server
     lld_16
     clang
-    python311
-    python311Packages.python-lsp-server
     gnumake
     gcc
     ocaml
     ocamlPackages.ocaml-lsp
     opam
     postgresql_15
+
+    python311
+    python311Packages.python-lsp-server
+    python311Packages.ruff-lsp
   ];
 
   services.xserver = {

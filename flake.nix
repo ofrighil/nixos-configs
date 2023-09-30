@@ -9,7 +9,6 @@
     nixosConfigurations.serval = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ 
-        ./base
         ./form
         ./ghosts/serval/configuration.nix
         home-manager.nixosModules.home-manager {
