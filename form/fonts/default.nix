@@ -5,6 +5,6 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
-    (nerdfonts.override { fonts = [ "Iosevka" "IosevkaTerm" "Mononoki" ]; })
+    (nerdfonts.override { fonts = [ "Iosevka" "IosevkaTerm" "Mononoki" "NerdFontsSymbolsOnly" ]; })
   ];
 }
