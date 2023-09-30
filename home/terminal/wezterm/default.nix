@@ -5,7 +5,7 @@
     local wezterm = require('wezterm')
     return {
       font = wezterm.font("IosevkaTerm Nerd Font Mono", {weight="Regular", stretch="Normal", style="Normal"}),
-      font_size = 14.0,
+      font_size = 16.0,
     }
   '';
 }
