@@ -1,6 +1,6 @@
 local lsp = require('lsp-zero').preset({})
 
-lsp.setup_servers({'ocamllsp', 'pylsp', 'rust_analyzer'})
+lsp.setup_servers({'ocamllsp', 'pylsp', 'ruff_lsp', 'rust_analyzer'})
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
@@ -36,7 +36,7 @@ luasnip.config.setup()
 cmp.setup({
   snippet = {
     expand = function(args)
-      luansip.lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end
   },
   mapping = cmp.mapping.preset.insert({
@@ -47,8 +47,15 @@ cmp.setup({
     ['<C-j>'] = cmp.mapping.scroll_docs(4),
     ['<C-k>'] = cmp.mapping.scroll_docs(-4),
   }),
-  source = {
+  sources = {
     { name = 'nvim_lsp' },
-    { name = 'luasnip' }, 
+    { name = 'luasnip' },
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered()
+  },
+  formatting = {
+    fields = {'menu', 'abbr', 'kind'},
   },
 })

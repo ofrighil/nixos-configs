@@ -12,11 +12,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  { 'rose-pine/neovim', name = 'rose-pine', config = function() vim.cmd.colorscheme 'rose-pine' end },
-  { 'nvim-telescope/telescope.nvim', tag = '0.1.2', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.2',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  { 'nvim-tree/nvim-web-devicons' },
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
   { 'nvim-treesitter/nvim-treesitter-context' },
   { 'nvim-treesitter/playground' },
+  {
+    'rebelot/kanagawa.nvim',
+    config = function() vim.cmd.colorscheme 'kanagawa' end
+  },
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
