@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {}}: pkgs.mkShell {
   buildInputs = with pkgs; [
-    pkg-config openssl
+    pkg-config openssl protobuf3_20
   ];
 
   shellHook = ''
