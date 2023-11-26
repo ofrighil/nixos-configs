@@ -1,11 +1,14 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
+    ../../services
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.zsh.enable = true;
+  programs.neovim.enable = true;
+  programs.neovim.defaultEditor = true;
   users.defaultUserShell = pkgs.zsh;
   users.users.ofrighil = {
     isNormalUser = true;
@@ -36,6 +39,10 @@
 
   security.rtkit.enable = true;
 
+  # for sway
+  security.polkit.enable = true;
+  hardware.opengl.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   virtualisation.docker.enable = true;
@@ -64,15 +71,6 @@
     python311Packages.python-lsp-server
     python311Packages.ruff-lsp
   ];
-
-  services.xserver = {
-    enable = true;
-    displayManager.lightdm.enable = true;
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-    };
-  };
 
   xdg.portal = {
     enable = true;
