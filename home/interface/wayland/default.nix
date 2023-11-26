@@ -1,3 +1,3 @@
 {
-  imports = [ ./common.nix ./hyprland.nix ./sway.nix ];
+  imports = [ ./common.nix ./hyprland ./sway.nix ];
 }
