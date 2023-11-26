@@ -62,9 +62,6 @@
     clang
     gnumake
     gcc
-    ocaml
-    ocamlPackages.ocaml-lsp
-    opam
     postgresql_15
   ]) ++ (import ../../languages pkgs);
 
