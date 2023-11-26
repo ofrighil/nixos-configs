@@ -48,7 +48,7 @@
   virtualisation.docker.enable = true;
   # services.postgresql.enable = true;
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     firefox
     git
     ripgrep
@@ -66,11 +66,7 @@
     ocamlPackages.ocaml-lsp
     opam
     postgresql_15
-
-    python311
-    python311Packages.python-lsp-server
-    python311Packages.ruff-lsp
-  ];
+  ]) ++ (import ../../languages pkgs);
 
   xdg.portal = {
     enable = true;
