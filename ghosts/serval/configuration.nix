@@ -43,6 +43,15 @@
   security.polkit.enable = true;
   hardware.opengl.enable = true;
 
+  services.xserver = {
+    enable = true;
+    displayManager.lightdm.enable = true;
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+    };
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   virtualisation.docker.enable = true;
@@ -66,6 +75,7 @@
   ]) ++ (import ../../languages pkgs);
 
   xdg.portal = {
+    config.common.default = "*";
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
@@ -74,5 +84,5 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }

@@ -1,5 +1,5 @@
 { pkgs, ... } : {
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     intel-one-mono
     sarasa-gothic
     noto-fonts
