@@ -1,3 +1,3 @@
 { ... }: {
-  imports = [ ./zsh ];
+  imports = [ ./nushell ./zsh ];
 }
