@@ -6,6 +6,8 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  age.identityPaths = [ /home/ofrighil/.ssh/id_ed25519 ];
+
   programs.zsh.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
