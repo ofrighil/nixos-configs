@@ -1,5 +1,5 @@
 let
-  fonts = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPGWEwfr4nwcs4eTf80N0F7uVD7j/rCcOAbCzBhlnsj9" ];
+  fonts = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEyHG9JyTC3kTOvbpIcvWJN8PlAX35/txp5UkIdw85tu" ];
   font-mll = "MLL-v1_808";
 in
 {

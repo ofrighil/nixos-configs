@@ -6,7 +6,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  age.identityPaths = [ /home/ofrighil/.ssh/id_ed25519 ];
+  age.identityPaths = [ "/home/ofrighil/.ssh/fonts-key" ];
 
   programs.zsh.enable = true;
   programs.neovim.enable = true;
@@ -67,12 +67,8 @@
     fd
     vim
     xclip # refactor later
-    rust-analyzer
-    lua-language-server
     lld_16
-    clang
     gnumake
-    gcc
     postgresql_15
   ]) ++ (import ../../languages pkgs);
 
