@@ -6,24 +6,11 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  age.identityPaths = [ "/home/ofrighil/.ssh/fonts-key" ];
-
   programs.zsh.enable = true;
   programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
   users.defaultUserShell = pkgs.zsh;
-  users.users.ofrighil = {
-    isNormalUser = true;
-    uid = 1000;
-    home = "/home/ofrighil";
-    extraGroups = [ "docker" "wheel" "networkmanager" ];
-    shell = pkgs.nushell;
-  };
 
   environment.shells = with pkgs; [ nushell zsh ];
-
-  networking.hostName = "serval";
-  networking.networkmanager.enable = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -65,7 +52,7 @@
     ripgrep
     bat
     fd
-    vim
+    #vim
     xclip # refactor later
     lld_16
     gnumake
