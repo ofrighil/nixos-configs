@@ -1,3 +1,3 @@
-{
-  imports = [ ./display ];
+{ pkgs, ... }: {
+  # imports = [ ./display ];
 }

@@ -14,13 +14,16 @@ inputs: with inputs; {
   in nixpkgs.lib.nixosSystem {
     inherit system;
     modules = [
-      ./form
-      ./ghosts/${hostname}/configuration.nix
-      agenix.nixosModules.default
-      home-manager.nixosModules.home-manager home
       {
         environment.systemPackages = [ agenix.packages.${system}.default ];
       }
+      agenix.nixosModules.default
+      ./form
+      (import ./ghosts/base.nix { inherit username hostname; })
+      ./ghosts/${hostname}/configuration.nix
+      ./languages
+      ./services
+      home-manager.nixosModules.home-manager home
       overlays
     ];
   };

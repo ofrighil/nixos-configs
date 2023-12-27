@@ -1,8 +1,14 @@
 { username, hostname }: { pkgs, ... }: let
   home = "/home/${username}";
 in {
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+
   networking.hostName = hostname;
   networking.networkmanager.enable = true;
+
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   users.users.${username} = {
     isNormalUser = true;
@@ -12,9 +18,21 @@ in {
     shell = pkgs.nushell;
   };
 
-  programs.neovim.defaultEditor = true;
+  environment.shells = with pkgs; [ nushell zsh ];
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
+  environment.systemPackages = with pkgs; [ 
+    bat
+    fd
+    firefox
+    git
+    ripgrep
+    vim
+  ];
 
   age.identityPaths = [ "${home}/.ssh/fonts-key" ];
-
-  environment.systemPackages = [ pkgs.vim ];
 }

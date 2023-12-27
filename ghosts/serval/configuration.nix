@@ -1,16 +1,5 @@
 { config, pkgs, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-    ../../services
-  ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  programs.zsh.enable = true;
-  programs.neovim.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-
-  environment.shells = with pkgs; [ nushell zsh ];
+  imports = [ ./hardware-configuration.nix ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -41,23 +30,14 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
-
-  virtualisation.docker.enable = true;
-  # services.postgresql.enable = true;
+  # virtualisation.docker.enable = true;
 
   environment.systemPackages = (with pkgs; [
-    firefox
-    git
-    ripgrep
-    bat
-    fd
-    #vim
     xclip # refactor later
     lld_16
     gnumake
     postgresql_15
-  ]) ++ (import ../../languages pkgs);
+  ]);
 
   xdg.portal = {
     config.common.default = "*";
