@@ -1,5 +1,5 @@
 inputs: with inputs; {
-  mkSystem = { system, username, hostname }: let
+  mkSystem = { system, interface, username, hostname }: let
     overlays = {
       nixpkgs.overlays = [ rust-overlay.overlays.default ];
     };
@@ -21,6 +21,7 @@ inputs: with inputs; {
       (import ./ghosts/base.nix { inherit username hostname; })
       ./ghosts/${hostname}/configuration.nix
       ./modules/form
+      ./modules/interface/${interface}
       ./modules/languages
       ./modules/services
       home-manager.nixosModules.home-manager home

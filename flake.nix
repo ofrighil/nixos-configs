@@ -11,7 +11,10 @@
     inherit (import ./tools.nix inputs) mkSystem;
   in {
     nixosConfigurations.serval = mkSystem {
-      system = "x86_64-linux"; username = "ofrighil"; hostname = "serval";
+      system = "x86_64-linux";
+      interface = "x";
+      username = "ofrighil";
+      hostname = "serval";
     };
   };
 }
