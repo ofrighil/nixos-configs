@@ -18,11 +18,11 @@ inputs: with inputs; {
         environment.systemPackages = [ agenix.packages.${system}.default ];
       }
       agenix.nixosModules.default
-      ./form
       (import ./ghosts/base.nix { inherit username hostname; })
       ./ghosts/${hostname}/configuration.nix
-      ./languages
-      ./services
+      ./modules/form
+      ./modules/languages
+      ./modules/services
       home-manager.nixosModules.home-manager home
       overlays
     ];

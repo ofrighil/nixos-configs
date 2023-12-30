@@ -27,9 +27,14 @@ in {
 
   environment.systemPackages = with pkgs; [ 
     bat
+    clang
+    clang-tools_17
+    cmake
     fd
     firefox
+    gcc
     git
+    lld_16
     ripgrep
     vim
   ];
