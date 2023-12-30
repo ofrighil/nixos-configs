@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   services.greetd = {
     enable = true;
     settings = {
@@ -7,14 +7,14 @@
         --time \
         --asterisks \
         --user-menu \
-        --cmd sway
+        --cmd Hyprland 
       '';
     };
   };
 
   environment.etc."greetd/environments".text = ''
-    hyprland
+    Hyprland
     sway
-    xmonad
+    zsh
   '';
 }
