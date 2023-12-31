@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  inherit (import ./display.nix pkgs);
+  imports = [ (import ./display.nix pkgs) ]
 
   security.polkit.enable = true;
   hardware.opengl.enable = true;

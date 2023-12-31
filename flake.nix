@@ -12,7 +12,7 @@
   in {
     nixosConfigurations.serval = mkSystem {
       system = "x86_64-linux";
-      interface = "x";
+      interface = "wayland";
       username = "ofrighil";
       hostname = "serval";
     };
