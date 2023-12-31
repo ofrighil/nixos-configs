@@ -1,3 +1,4 @@
-{ ... }: {
-  imports = [ ./fonts ];
-}
+username:
+  { ... }: {
+    inherit (import ./fonts username);
+  }

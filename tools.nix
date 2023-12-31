@@ -8,7 +8,13 @@ inputs: with inputs; {
         home-manager.users.${username} = {
         home.stateVersion = "23.11";
         xdg.enable = true;
-        imports = [ ./home ];
+        imports = [ 
+          ./home/editor
+          ./home/interface/${interface}
+          ./home/multiplexer
+          ./home/shell
+          ./home/terminal
+        ];
       };
     };
   in nixpkgs.lib.nixosSystem {
@@ -20,7 +26,7 @@ inputs: with inputs; {
       agenix.nixosModules.default
       (import ./ghosts/base.nix { inherit username hostname; })
       ./ghosts/${hostname}/configuration.nix
-      ./modules/form
+      (import ./modules/form username)
       ./modules/interface/${interface}
       ./modules/languages
       ./modules/services

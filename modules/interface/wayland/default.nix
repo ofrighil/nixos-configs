@@ -1,10 +1,13 @@
 { pkgs, ... }: {
-  imports = [ ./display.nix ];
+  inherit (import ./display.nix pkgs);
 
   security.polkit.enable = true;
   hardware.opengl.enable = true;
 
-  environment.systemPackages = [ pkgs.wl-clipboard ];
+  environment.systemPackages = with pkgs; [ 
+    wl-clipboard
+    qt6.qtwayland
+  ];
 
   xdg.portal = {
     config.common.default = "wlr";
