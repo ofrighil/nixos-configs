@@ -1,12 +1,23 @@
 { pkgs, ... }: {
-  imports = [ (import ./display.nix pkgs) ]
+  imports = [ (import ./display.nix pkgs) ];
 
-  security.polkit.enable = true;
   hardware.opengl.enable = true;
+  security.polkit.enable = true;
+  services.dbus.enable = true;
 
   environment.systemPackages = with pkgs; [ 
-    wl-clipboard
+    dbus
+    # fuzzel
+    grim
+    # mako
+    slurp
+    # swaybg
+    # swayidle
+    # swaylock
     qt6.qtwayland
+    # waybar
+    wl-clipboard
+    # xdg-utils
   ];
 
   xdg.portal = {
