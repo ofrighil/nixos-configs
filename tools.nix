@@ -10,6 +10,7 @@ inputs: with inputs; {
         xdg.enable = true;
         imports = [ 
           ./home/editor
+          ./home/interface/common
           ./home/interface/${interface}
           ./home/multiplexer
           ./home/shell

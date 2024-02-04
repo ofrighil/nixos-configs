@@ -15,7 +15,7 @@ in {
     uid = 1000;
     inherit home;
     extraGroups = [ "docker" "wheel" "networkmanager" ];
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
   };
 
   environment.shells = with pkgs; [ nushell zsh ];

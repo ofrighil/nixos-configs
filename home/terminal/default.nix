@@ -1,3 +1,3 @@
 {
-  imports = [ ./wezterm ];
+  imports = [ ./foot ./wezterm ];
 }
