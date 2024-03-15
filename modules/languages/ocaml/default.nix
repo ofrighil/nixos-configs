@@ -1,1 +1,3 @@
-pkgs: with pkgs; [ ocaml ocamlPackages.ocaml-lsp opam ]
+pkgs: with pkgs; [
+  ocaml ocamlPackages.ocamlformat ocamlPackages.ocaml-lsp opam
+]

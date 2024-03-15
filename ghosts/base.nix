@@ -30,6 +30,7 @@ in {
     clang
     clang-tools_17
     cmake
+    cmake-language-server
     fd
     firefox
     gcc

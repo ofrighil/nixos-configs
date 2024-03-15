@@ -1,10 +1,10 @@
 {
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs;
-    agenix.url = github:ryantm/agenix;
-    home-manager.url = github:nix-community/home-manager;
+    nixpkgs.url = "github:NixOS/nixpkgs";
+    agenix.url = "github:ryantm/agenix";
+    home-manager.url = "github:nix-community/home-manager";
 
-    rust-overlay.url = github:oxalica/rust-overlay;
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
   outputs = inputs: let
