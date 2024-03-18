@@ -1,0 +1,3 @@
+[submodule "home/editor/neovim/nvim"]
+	path = home/editor/neovim/nvim
+	url = https://github.com/ofrighil/nvim
