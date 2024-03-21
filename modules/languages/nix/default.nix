@@ -1,1 +1,1 @@
-pkgs: [ pkgs.nil ]
+pkgs: with pkgs; [ pkgs.nil pkgs.nixfmt ]

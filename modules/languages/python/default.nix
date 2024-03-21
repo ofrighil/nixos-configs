@@ -1,6 +1,7 @@
 let
   packages = ps: with ps; [
+    isort
+    python-lsp-ruff
     python-lsp-server
-    ruff-lsp
   ];
-in pkgs: [ (pkgs.python311.withPackages packages) ]
+in pkgs: with pkgs; [ (python311.withPackages packages) ruff ]

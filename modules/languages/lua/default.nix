@@ -1,1 +1,1 @@
-pkgs: [ pkgs.lua-language-server ]
+pkgs: with pkgs; [ lua-language-server stylua ]
